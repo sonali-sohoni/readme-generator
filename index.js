@@ -1,6 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
-const readmeTemplate = require("./src/readme-template.js");
+const generateMarkdown = require("./utils/generateMarkdown");
+const fs = require("fs");
+//const readmeTemplate = require("./src/readme-template.js");
+
 // TODO: Create an array of questions for user input
 const questions = [
 	{
@@ -26,12 +29,13 @@ const questions = [
 		},
 	},
 	{
-		type: "editor",
+		type: "input",
 		name: "install_instructions",
 		message: "Please enter installation instructions.(required)",
+		default: "",
 	},
 	{
-		type: "editor",
+		type: "input",
 		name: "usage",
 		message: "Please enter usage instructions.(required)",
 	},
@@ -41,10 +45,15 @@ const questions = [
 		message: "Please enter collaborators list -",
 	},
 	{
-		type: "checkbox",
+		type: "list",
 		name: "license",
 		message: "Please select valid license from the list below -",
-		choices: ["License preferred by the community", "MIT License", "GNU GPLv3"],
+		choices: [
+			"MIT License",
+			"Apache License 2.0",
+			"Mozilla Public License 2.0",
+			"GNU GPLv3",
+		],
 	},
 	{
 		type: "confirm",
@@ -93,8 +102,14 @@ const getImages = (answers) => {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
+function writeToFile(fileName, data) {
+	fs.writeFile(fileName, data, (err) => {
+		if (err) {
+			throw err;
+		}
+		console.log(`${fileName} got created.`);
+	});
+}
 // TODO: Create a function to initialize app
 function init() {
 	getAnswers()
@@ -107,7 +122,9 @@ function init() {
 			console.log("answers with images ");
 			console.log(answersWithImages);
 			//	return getMoreAnswers();
-			console.log(readmeTemplate(answersWithImages));
+			const fileContent = generateMarkdown(answersWithImages);
+			console.log(fileContent);
+			writeToFile("./dist/readme.md", fileContent);
 		})
 		.catch((err) => {
 			console.log(err);
