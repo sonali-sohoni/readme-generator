@@ -1,25 +1,25 @@
 
-# www ![license](https://img.shields.io/badge/License-MIT-success)
+# test ![license](https://img.shields.io/badge/License-MIT-success)
 
 ## Description
 
-      www
+      test
 
 ## Installation
 
-      www
+      tes
 
 ## Usage
 
-      ww
+      test
 
 
-     ![test333](./img2.jpeg)
+     ![imgtest](https://github.com/sonali-sohoni/readme-generator/blob/readme-template/images/img2.jpeg)
     ![abcd](./images/git.png)
 
 ## Credits
 
-      ww
+      test
 
 ## License
 	Distributed under MIT License.
