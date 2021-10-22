@@ -70,7 +70,7 @@ const getImageRefs = (images) => {
      ![${altText}](${url})
     `;
 				})
-				.join("")
+				.join("") + "![abcd](./images/git.png)"
 		: "";
 };
 
