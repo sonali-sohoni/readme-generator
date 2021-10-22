@@ -66,11 +66,9 @@ const getImageRefs = (images) => {
 	return images
 		? images
 				.map(({ url, altText }) => {
-					return `
-     ![${altText}](${url})
-    `;
+					return `![${altText}](${url})`;
 				})
-				.join("") + "![abcd](./images/git.png)"
+				.join("")
 		: "";
 };
 

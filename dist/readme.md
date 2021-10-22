@@ -7,15 +7,13 @@
 
 ## Installation
 
-      tes
+      test
 
 ## Usage
 
       test
 
-
-     ![imgtest](https://github.com/sonali-sohoni/readme-generator/blob/readme-template/images/img2.jpeg)
-    ![abcd](./images/git.png)
+![imgtest](/images/img2.jpeg)
 
 ## Credits
 
