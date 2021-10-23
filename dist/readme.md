@@ -1,42 +1,50 @@
 
-# wwww ![license](https://img.shields.io/badge/License-MIT-success)
+# sss ![license](https://img.shields.io/badge/License-MIT-success)
 
 ## Description
 
-wwwww
+ddds
 
 
-* [github](#github)
+* [github](#github) 
 * [email](#email)
 * [Installation](#installation)
-* [license](#license)
+* [usage](#usage)
+* [credits](#credits)
+* [contributions](#contributions)
+* [tests](#tests)
+* [License](#license)
 
 ## Installation
 
-sas
+fsdfddfsdfs
+
+## Usage
+
+dfasfdsa
 
 
 
+## Credits
 
-
-
+f
 
 ## License
 Distributed under MIT License.
 Read more about this license [here](https://choosealicense.com/licenses/mit/)
 	
 
+## Contributing
 
+dfasdasf
 
+## Tests
 
+asd
 
 ## Questions
-Please check issues and other resources at [project repository](wwwww)
-You can also reach out project team by email wxswrewr 
-
-    
-  
-	
+Please check issues and other resources at [project repository](ddsdsd)
+You can also reach out project team by email dfdsdfs 
 
     
   
