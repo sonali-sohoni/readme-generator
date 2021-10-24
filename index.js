@@ -9,7 +9,7 @@ const questions = [
 	{
 		type: "input",
 		name: "title",
-		message: "What is the name of your project? (required)",
+		message: "What is the name of your project? [Required]",
 		validate: (projectTitle) => {
 			if (projectTitle) return true;
 			else {
@@ -20,34 +20,64 @@ const questions = [
 	{
 		type: "input",
 		name: "desc",
-		message: "Please enter the brief description about the project.(required)",
+		message: "Please enter the brief description about the project.[Required]",
 		validate: (description) => {
 			if (description) return true;
 			else {
-				console.log("Please enter the project description.");
+				console.log("Please enter the project description.[Required] ");
 			}
 		},
 	},
 	{
 		type: "input",
-		name: "install_instructions",
-		message: "Please enter installation instructions.(required)",
-		default: "",
+		name: "github",
+		message: "Please enter the GitHub link of your application [Required]- ",
+		validate: (githublink) => {
+			if (githublink) return true;
+			else
+				console.log(
+					"Please enter the GitHub link of your application [Required] -"
+				);
+		},
 	},
 	{
 		type: "input",
-		name: "usage",
-		message: "Please enter usage instructions.(required)",
+		name: "email",
+		message: "Please enter your preferred contact email address -",
 	},
 	{
 		type: "input",
-		name: "credits",
+		name: "Installation",
+		message: "Please enter installation instructions. - ",
+	},
+	{
+		type: "input",
+		name: "Usage",
+		message: "Please enter usage instructions. - ",
+	},
+
+	{
+		type: "input",
+		name: "Credits",
 		message: "Please enter collaborators list -",
 	},
 	{
+		type: "input",
+		name: "Contributing",
+		message:
+			"Please enter instructions about how other developers can contribute to this project - ",
+	},
+
+	{
+		type: "input",
+		name: "Tests",
+		message: "Please enter the instructions to test your application - ",
+	},
+
+	{
 		type: "list",
-		name: "license",
-		message: "Please select valid license from the list below -",
+		name: "License",
+		message: "Please select valid license from the list below - ",
 		choices: [
 			"MIT License",
 			"Apache License 2.0",
@@ -67,7 +97,7 @@ const getAnswers = () => {
 };
 
 const getImages = (answers) => {
-	console.log(answers);
+	//console.log(answers);
 	if (!answers.images) {
 		answers.images = [];
 	}
@@ -123,8 +153,8 @@ function init() {
 			console.log(answersWithImages);
 			//	return getMoreAnswers();
 			const fileContent = generateMarkdown(answersWithImages);
-			console.log(fileContent);
-			writeToFile("./dist/readme.md", fileContent);
+			//		console.log(fileContent);
+			writeToFile("./readme.md", fileContent);
 		})
 		.catch((err) => {
 			console.log(err);

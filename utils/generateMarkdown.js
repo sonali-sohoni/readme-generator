@@ -23,7 +23,7 @@ const licesesDef = [
 	},
 ];
 function renderLicenseBadge(license) {
-	console.log("parameter = " + license);
+	//	console.log("parameter = " + license);
 	let licenseObj = licesesDef.find(
 		(obj) => obj.licenseName.trim() === license.trim()
 	);
@@ -46,10 +46,10 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 
 function renderLicenseSection(license) {
-	console.log(license);
+	//	console.log(license);
 	return `## License
-	Distributed under ${license}.
-	${renderLicenseLink(license)}
+Distributed under ${license}.
+Read more about this license [here](${renderLicenseLink(license)})
 	`;
 }
 //![APM](https://img.shields.io/apm/l/vim-mode)
@@ -58,8 +58,64 @@ const getSection = (sectionName, sectionText) => {
 	else {
 		return `## ${sectionName}
 
-      ${sectionText}`;
+${sectionText}`;
 	}
+};
+
+const getQuestionsSection = (sectionName, email, gitHubLink) => {
+	if (!email && !gitHubLink) return "";
+	else {
+		return `## ${sectionName}
+Please check issues and other resources at [project repository](${gitHubLink})
+You can also reach out project team by email ${email} `;
+	}
+};
+
+const generateTableOfContents = (data) => {
+	let table_content = "";
+	let tableEntries = Object.entries(data).filter((entry) => {
+		if (
+			entry[0] === "title" ||
+			entry[0] === "desc" ||
+			entry[0] === "github" ||
+			entry[0] === "email" ||
+			entry[0] == "confirm_images" ||
+			entry[0] == "images"
+		)
+			return false;
+
+		if (entry[1]) return true;
+	});
+	console.log("table Entries " + tableEntries);
+	let ind = 0;
+	tableEntries.forEach((entry) => {
+		ind++;
+		table_content +=
+			"(" +
+			ind +
+			") " +
+			" [" +
+			entry[0] +
+			"]" +
+			"(#" +
+			entry[0].toLowerCase() +
+			")" +
+			"</br>      ";
+	});
+
+	table_content +=
+		"(" +
+		ind +
+		") " +
+		" [" +
+		"Questions" +
+		"]" +
+		"(#" +
+		"questions" +
+		")" +
+		"</br>      ";
+
+	return table_content;
 };
 
 const getImageRefs = (images) => {
@@ -72,23 +128,37 @@ const getImageRefs = (images) => {
 		: "";
 };
 
+const getTableOfContents = (data) => {
+	console.log(Object.keys(data));
+};
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-	console.log("generate MarkDown" + data.license);
+	//console.log(Object.entries(data));
+
 	return `
-# ${data.title} ${renderLicenseBadge(data.license)}
+# ${data.title} ${renderLicenseBadge(data.License)}
 
 ${getSection("Description", data.desc)}
 
-${getSection("Installation", data.install_instructions)}
 
-${getSection("Usage", data.usage)}
+${generateTableOfContents(data)}
+
+${getSection("Installation", data.Installation)}
+
+${getSection("Usage", data.Usage)}
 
 ${getImageRefs(data.images)}
 
-${getSection("Credits", data.credits)}
+${getSection("Credits", data.Credits)}
 
-${renderLicenseSection(data.license)}
+${renderLicenseSection(data.License)}
+
+${getSection("Contributing", data.Contributing)}
+
+${getSection("Tests", data.Tests)}
+
+${getQuestionsSection("Questions", data.email, data.github)}
 
     
   `;
