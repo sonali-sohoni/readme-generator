@@ -154,7 +154,7 @@ function init() {
 			//	return getMoreAnswers();
 			const fileContent = generateMarkdown(answersWithImages);
 			//		console.log(fileContent);
-			writeToFile("./readme.md", fileContent);
+			writeToFile("./dist/readme.md", fileContent);
 		})
 		.catch((err) => {
 			console.log(err);
