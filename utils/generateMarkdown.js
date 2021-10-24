@@ -72,7 +72,7 @@ You can also reach out project team by email ${email} `;
 };
 
 const generateTableOfContents = (data) => {
-	let table_content = "## Table Of Contents" + "</br>      ";
+	let table_content = "";
 	let tableEntries = Object.entries(data).filter((entry) => {
 		if (
 			entry[0] === "title" ||
@@ -137,7 +137,7 @@ function generateMarkdown(data) {
 
 ${getSection("Description", data.desc)}
 
-
+## Table Of Contents 
 ${generateTableOfContents(data)}
 
 ${getSection("Installation", data.Installation)}
