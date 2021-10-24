@@ -27,9 +27,9 @@ function renderLicenseBadge(license) {
 	let licenseObj = licesesDef.find(
 		(obj) => obj.licenseName.trim() === license.trim()
 	);
-	console.log("-------------------------------");
-	console.log(licenseObj.badgeTxt);
-	console.log("-------------------------------");
+	// console.log("-------------------------------");
+	// console.log(licenseObj.badgeTxt);
+	// console.log("-------------------------------");
 	return license
 		? `![license](https://img.shields.io/badge/License-${licenseObj.badgeTxt}-success)`
 		: "";
@@ -86,7 +86,7 @@ const generateTableOfContents = (data) => {
 
 		if (entry[1]) return true;
 	});
-	console.log("table Entries " + tableEntries);
+//	console.log("table Entries " + tableEntries);
 	let ind = 0;
 	tableEntries.forEach((entry) => {
 		ind++;
@@ -128,9 +128,7 @@ const getImageRefs = (images) => {
 		: "";
 };
 
-const getTableOfContents = (data) => {
-	console.log(Object.keys(data));
-};
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
