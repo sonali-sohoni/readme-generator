@@ -7,6 +7,22 @@ The application generates a README file by using a command-line application to g
 ## Objectives
 * Understand and implement basic concepts of Node.js.
 
+## Mock Up
+* GIVEN a command-line application that accepts user input
+* WHEN I am prompted for information about my application repository
+  THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License,     Contributing, Tests, and Questions
+* WHEN I enter my project title
+  THEN this is displayed as the title of the README
+* WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+  THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+* WHEN I choose a license for my application from a list of options
+  THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+* WHEN I enter my GitHub username
+  THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+* WHEN I enter my email address
+  THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+* WHEN I click on the links in the Table of Contents
+  THEN I am taken to the corresponding section of the README
 
 ## Built With
 * Node.js
@@ -19,14 +35,11 @@ The application generates a README file by using a command-line application to g
 * Click on code and select Clone or download zip file then unzip it.
 * Open the folder in the Visual Studio Code,install inquirer packages and run node.index command on command prompt
 * Please answer the project realted quesitons and README file will ge generated ./dist/ folder.
-* 
+
 ##Screenshots
-![mainPage](https://user-images.githubusercontent.com/88642738/133005187-c14b602c-ba0e-4a03-a980-fb0e08da9912.JPG)
-![alert_lc](https://user-images.githubusercontent.com/88642738/133005190-7e1a583d-2fd2-4738-ac7c-443db0b39150.JPG)
-![alert_length](https://user-images.githubusercontent.com/88642738/133005191-be58d853-6c00-49af-94e3-f13bfee01823.JPG)
-![alert_numeric](https://user-images.githubusercontent.com/88642738/133005193-63aac632-c7b9-4210-ab37-03ad3d3c85f7.JPG)
-![alert_spl](https://user-images.githubusercontent.com/88642738/133005195-ccd09bef-1cc1-4dfa-a5e1-eb21443f1c3f.JPG)
-![alert_uc](https://user-images.githubusercontent.com/88642738/133005196-4c8c1002-bfc8-4d53-99f8-768481fea0fb.JPG)
+![readme1](https://user-images.githubusercontent.com/88642738/138608456-20c6093c-8e7f-4a58-b988-9d427f58b4b4.JPG)
+![readme2JPG](https://user-images.githubusercontent.com/88642738/138608457-0ad35b2a-20d7-4cf4-ab7e-905eb69b7e37.JPG)
+![readme3](https://user-images.githubusercontent.com/88642738/138608459-0225690d-4d31-4f0d-a2a5-f4ece93cc198.JPG)
 
 
 
