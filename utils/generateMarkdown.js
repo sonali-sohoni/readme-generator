@@ -72,7 +72,7 @@ You can also reach out project team by email ${email} `;
 };
 
 const generateTableOfContents = (data) => {
-	let table_content = "";
+	let table_content = "## Table Of Contents" + "</br>      ";
 	let tableEntries = Object.entries(data).filter((entry) => {
 		if (
 			entry[0] === "title" ||
@@ -86,7 +86,7 @@ const generateTableOfContents = (data) => {
 
 		if (entry[1]) return true;
 	});
-//	console.log("table Entries " + tableEntries);
+	//	console.log("table Entries " + tableEntries);
 	let ind = 0;
 	tableEntries.forEach((entry) => {
 		ind++;
@@ -127,8 +127,6 @@ const getImageRefs = (images) => {
 				.join("")
 		: "";
 };
-
-
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {

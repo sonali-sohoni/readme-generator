@@ -106,7 +106,7 @@ const getImages = (answers) => {
 			{
 				type: "input",
 				name: "image_url",
-				message: "Please enter URL for images",
+				message: "Please enter the path/URL for the image - ",
 			},
 			{
 				type: "input",
@@ -120,7 +120,7 @@ const getImages = (answers) => {
 			},
 		])
 		.then((imageData) => {
-		//	console.log(imageData);
+			//	console.log(imageData);
 			answers.images.push({
 				url: imageData.image_url,
 				altText: imageData.altText,
@@ -144,13 +144,13 @@ function writeToFile(fileName, data) {
 function init() {
 	getAnswers()
 		.then((answers) => {
-	//		console.log(answers);
+			//		console.log(answers);
 			if (answers.confirm_images) return getImages(answers);
 			else return answers;
 		})
 		.then((answersWithImages) => {
-	//		console.log("answers with images ");
-	//		console.log(answersWithImages);
+			//		console.log("answers with images ");
+			//		console.log(answersWithImages);
 			//	return getMoreAnswers();
 			const fileContent = generateMarkdown(answersWithImages);
 			//		console.log(fileContent);
